@@ -1,0 +1,12 @@
+pkgs:
+  {% if grains['os_family'] == 'RedHat' %}
+  apache2: httpd
+  vim: vim-enhanced
+  {% elif grains['os_family'] == 'Debian' %}
+  apache2: apache2
+  vim: vim
+  {% elif grains['os'] == 'Arch' %}
+  apache2: apache
+  vim: vim
+  {% endif %}
+
